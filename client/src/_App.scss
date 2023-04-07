@@ -1,0 +1,53 @@
+#APP {
+    width: 100%;
+    min-height: 90vh;
+    height: 100vh;
+    max-height: auto;
+    background: $grey;
+    overflow: auto;
+
+    header {
+        .title-container{
+            width: 100%;
+            height: 15vh;
+            @include flex();
+
+            background: $green;
+            color: $grey;
+            font-size: 1.3em;
+        }
+    
+        .link-section{
+            width: 100%;
+            height: 5vh;
+            @include flex();
+            justify-content: space-around;
+
+            //& The 'a' here styling the '<Link></Link>' tags on app.js
+            a{
+                color: $green;
+                font-size: 1.6em;
+                text-decoration: none;
+
+                &:hover{
+                    color: white;;
+                }
+            }
+
+    
+        }
+
+    }
+
+    .body-container{
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+        .routes-section{
+            
+        }
+
+    }
+
+
+}

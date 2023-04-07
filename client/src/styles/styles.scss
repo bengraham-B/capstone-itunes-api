@@ -1,0 +1,38 @@
+//& Importing the google font of 'Poppins'
+@import url('https://fonts.googleapis.com/css2?family=Nabla&family=Poppins:wght@200;300&display=swap');
+
+//&Setting the 'Poppins' font as the global font for the application.
+*{
+    font-family: "poppins";
+    margin: 0;
+    padding: 0;
+}
+
+//&Functions
+
+@mixin flex(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+// & Variables 
+$primaryBlue: rgb(19, 19, 224);
+$grey: rgb(40, 39, 39);
+$green: rgb(0, 255, 132);
+
+
+@mixin flex-center () {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//&Importing style sheets from the rest of the Applicatin
+@import '../App';
+@import '../views/Fav/Fav';
+@import '../views/Fav/FavItem';
+@import '../views/Home/Home.view';
+@import '../views/Itunes/Itunes';
+@import '../views/Itunes/itunesElement';

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  id="INTUNES_ELEMENT"
+>
+  <div
+    className="element"
+  >
+    <div
+      className="text-container"
+    >
+      <p>
+        <h2 />
+      </p>
+      <p />
+      <p>
+        Type: 
+      </p>
+      <p>
+        Country: 
+      </p>
+      <p>
+        Genre: 
+      </p>
+      <p>
+        Price: $
+      </p>
+      <p>
+        <a />
+      </p>
+    </div>
+    <div
+      className="button-container"
+    >
+      <button
+        onClick={[Function]}
+      >
+        Favourite
+      </button>
+    </div>
+  </div>
+</div>
+`;

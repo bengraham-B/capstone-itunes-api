@@ -1,0 +1,37 @@
+#Home_VIEW{
+    height: 70vh;
+    width: inherit;
+    background: $grey;
+    @include flex();
+    color: $green;
+
+    .container {
+        width: 80%;
+        height: 40%;
+
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+
+        .text-container{
+            @include flex();
+            font-size: 1.35em;
+            text-align: center;
+        }
+
+        .buttons-container {
+            @include flex();
+            button {
+                margin: 10px;
+                padding: 5px;
+                border:none;
+                background: $green;
+                color:$grey;
+                border-radius: 5px;
+                width: 120px;
+                height: 60px;
+                font-size: 1.2em;
+            }
+        }
+    }
+}

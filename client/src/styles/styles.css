@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Nabla&family=Poppins:wght@200;300&display=swap");
+* {
+  font-family: "poppins";
+  margin: 0;
+  padding: 0;
+}
+
+#APP {
+  width: 100%;
+  min-height: 90vh;
+  height: 100vh;
+  max-height: auto;
+  background: rgb(40, 39, 39);
+  overflow: auto;
+}
+#APP header .title-container {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(0, 255, 132);
+  color: rgb(40, 39, 39);
+  font-size: 1.3em;
+}
+#APP header .link-section {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+}
+#APP header .link-section a {
+  color: rgb(0, 255, 132);
+  font-size: 1.6em;
+  text-decoration: none;
+}
+#APP header .link-section a:hover {
+  color: white;
+}
+#APP .body-container {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+}
+#FAV_VIEW {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#FAV_VIEW .no-favs-yet {
+  color: rgb(0, 255, 132);
+  font-size: 3em;
+}
+
+#FAV_ELEMENT .element {
+  min-height: 120px;
+  height: auto;
+  width: 900px;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  background: rgb(0, 255, 132);
+  color: rgb(40, 39, 39);
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 75% 25%;
+}
+#FAV_ELEMENT .element .text-container {
+  font-size: 1.15em;
+}
+#FAV_ELEMENT .element .button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#FAV_ELEMENT .element .button-container button {
+  width: 120px;
+  height: 50px;
+  border: none;
+  outline: 1px solid rgb(40, 39, 39);
+  border-radius: 5px;
+  color: rgb(40, 39, 39);
+  background: none;
+  font-size: 1.15em;
+}
+#FAV_ELEMENT .element .button-container button:hover {
+  color: rgb(0, 255, 132);
+  background: rgb(40, 39, 39);
+  box-shadow: 1px 1px 10px rgb(40, 39, 39);
+}
+
+#Home_VIEW {
+  height: 70vh;
+  width: inherit;
+  background: rgb(40, 39, 39);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 255, 132);
+}
+#Home_VIEW .container {
+  width: 80%;
+  height: 40%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 50% 50%;
+}
+#Home_VIEW .container .text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35em;
+  text-align: center;
+}
+#Home_VIEW .container .buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#Home_VIEW .container .buttons-container button {
+  margin: 10px;
+  padding: 5px;
+  border: none;
+  background: rgb(0, 255, 132);
+  color: rgb(40, 39, 39);
+  border-radius: 5px;
+  width: 120px;
+  height: 60px;
+  font-size: 1.2em;
+}
+
+#ITUNES_VIEW {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  display: gird;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 80%;
+}
+#ITUNES_VIEW .search-container {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#ITUNES_VIEW .search-container input {
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  font-size: 1.1em;
+  background: rgb(0, 255, 132);
+  color: rgb(40, 39, 39);
+}
+#ITUNES_VIEW .search-container button {
+  width: 130px;
+  height: 60px;
+  border: none;
+  padding: 15.5px;
+  margin: 12.5px;
+  border-radius: 5px;
+  font-size: 1.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  color: rgb(0, 255, 132);
+  outline: 1px rgb(0, 255, 132) solid;
+}
+#ITUNES_VIEW .search-container button:hover {
+  background: rgb(0, 255, 132);
+  box-shadow: 1px 1px 10px rgb(0, 255, 132);
+  color: rgb(40, 39, 39);
+}
+#ITUNES_VIEW .radio-button-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+}
+#ITUNES_VIEW .radio-button-container .radio-btn-wrapper input {
+  background: rgb(0, 255, 132);
+}
+#ITUNES_VIEW .radio-button-container .radio-btn-wrapper label {
+  color: rgb(0, 255, 132);
+  margin: 5px;
+}
+#ITUNES_VIEW .display-search-results-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#INTUNES_ELEMENT .element {
+  background: red;
+  min-height: 120px;
+  height: auto;
+  width: 900px;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  background: rgb(0, 255, 132);
+  color: rgb(40, 39, 39);
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 75% 25%;
+}
+#INTUNES_ELEMENT .element .text-container {
+  font-size: 1.15em;
+}
+#INTUNES_ELEMENT .element .button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#INTUNES_ELEMENT .element .button-container button {
+  width: 120px;
+  height: 50px;
+  border: none;
+  outline: 1px solid rgb(40, 39, 39);
+  border-radius: 5px;
+  color: rgb(40, 39, 39);
+  background: none;
+  font-size: 1.15em;
+}
+#INTUNES_ELEMENT .element .button-container button:hover {
+  color: rgb(0, 255, 132);
+  background: rgb(40, 39, 39);
+  box-shadow: 1px 1px 10px rgb(40, 39, 39);
+}/*# sourceMappingURL=styles.css.map */

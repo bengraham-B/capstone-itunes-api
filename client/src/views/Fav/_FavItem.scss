@@ -1,0 +1,56 @@
+#FAV_ELEMENT {
+
+    .element{
+        min-height: 120px;
+        height: auto;
+        width: 900px;
+        margin: 20px;
+        padding: 15px;
+        border-radius: 5px;
+
+        background: $green;
+        color: $grey;
+
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: 75% 25%;
+
+
+        .text-container{
+            font-size: 1.15em;
+            
+        }
+
+        .button-container{
+            @include flex();
+            
+            button{
+                width: 120px;
+                height: 50px;
+                border: none;
+                outline: 1px solid $grey;
+                border-radius: 5px;
+                color: $grey;
+                background: none;
+                font-size: 1.15em;;
+
+                &:hover{
+                    color: $green;
+                    background: $grey;
+                    box-shadow: 1px 1px 10px $grey;
+
+                }
+
+
+
+            }
+        }
+    }
+    
+
+
+
+    
+
+
+}

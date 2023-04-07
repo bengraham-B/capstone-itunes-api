@@ -1,0 +1,91 @@
+Documentation for Express API Search (L3T04)
+
+Index:
+(1) Overview of The Application
+(2) What technologies will be used in the Application
+(3) App.js
+(4) Directory: views - React Router. [Location: client/src/views]
+(5) Directory: store - Redux. [Location: client/src/store]
+(6) Directory: server - ExpressJS [Location: server/server.js]
+
+(1) Overview of The Application:
+    (a) This application will interact with the Itunes API and retrive specific data from the API, by use of a 
+        search Bar which will pass the search phrase to a "fetch()" function.
+
+    (b) The user will then be able to then save items to favourite. This saved item will be passed to the backend of the 
+        app where it will be stored in data.json(Location: server/data.json).
+    
+    (c) The items the user has saved will then be displayed on the Fav route, by making use of a GET request which will retrieve the 
+        data from data.json(Location: server/data.json), and display it to the screen.
+            (c) The information will be displayed with a React component, where there will be a 'unfavourite' button which will then
+                remove the item from the data.json(Location: server/data.json).   
+
+(2) What technologies will be used in the Application:
+    (a) Frontend [client]
+        (1) ReactJS: Will be used to create the user interface(UI), fontend of the application. 
+        (2) SASS: Will be used to style the application. 
+        (3) Redux; Which will be used to complete operations in-real-time.
+        (4) React Router: which will be used to swich between views wirh the App.js file(Location: client/src/App.js)
+
+    (b) Backend [server]
+        (1) NodeJS: Will be used to create the backend of the application. 
+        (2) Express: will be used to build the REST API for the application. 
+        (3) FS javascript libary (fs): Will be used to store  and manipulate the data from the frontend in a file, which will then 
+            be displayed back to the fontend.
+        (4) Helmet is used on the backend to add more security to the application.
+
+(3) App.js:
+    (a) In this file the React-router routes links will be dispalyed and the componets from src/views will also be displayed here.
+    (b) This is where the header and navagation section of the app will be found.
+
+(4) Directory: views - React Router. [Location:client/src/views]
+    (a) The views directory contains four folders. The views will form the UI of the application.
+    (b) JS files within each folder listed below will have the naming convention' <filename>.view.js'
+
+        (1) Directory: Itunes
+            (a) Itunes.view.js
+                (1) The purpose of this file is to take the user input from the input bar which will then pass user input to the "fetch()" function, wich will 
+                    then make a POST request to the backend(server.js).
+                (2) The server.js(Location: server/server.js) file will then, take the POST request, make a request to the Itunes API, with the search term
+                    and search type. The response from this request will then be sent back to the front end, as the frontend will make a fetch request to the 
+                    "/itunes" express end point.
+                (3) The response for the fetch('/itunes') request, will be passed down to the ItunesElement(Location: client/src/views/Itunes/ItunesElement.js) 
+                    compoent, which will pass the data(from 'fetch('/itunes')') down as props. The amount of ItunesElement compents that will be rendered will 
+                    depend on the amount of objects in the response from fetch('/itunes').
+                (4) The ItunesElement(Location: client/src/views/Itunes/ItunesElement.js) component will have a favourite button which will allow the user to 
+                    save it to the favourite section of the app - Fav(Location: client/src/views/Fav/Fav.view.js)
+                (5) There will be radio buttons underneather the search bar, which will allow the user to select what media type they would like to search for,
+                    they will be able to choose, all media types, eBook, podcast, software and movies. This will then be sent to the backend bu use of the POSTData()
+                    function.
+
+        (2) Directory: Fav
+            (a) Fav.view.js
+                (1) In this file, the user's favourited items from itens.view.js(Location: src/views/Itunes/Itunes.view.js), will be displayed from local storage.
+                (2) The data from local storage will be displayed in a react component(FavItem.js), in which the data from local storage will be passed down as props.
+                (3) On the FavItem.js button will be a delete button which will allow the user to delete a selected item from their favourite list
+                (4) Redux will be used here to allow for the delete elements to be removed from the DOM in real-time.
+
+        (3) Directory: Home
+            (a) Home.js
+                (1) This file will provide the user with a brief introduction to what the webapp does and provide two buttons which will direct the user to either 
+                    the iTunes page (Itunes.view.js) ot the favourite page (Fav.view.js).
+
+(5) Directory: store - Redux. [Location:client/src/store]
+    (a)File: refresh.js  
+        (1) The "refreshRequest()" reducer will incrememt when it is called inside from inside the FavItem.js(Location: src/views/Fav/FavItem.js) file, which 
+            will allow the user to delete items from their favourites in-real-time. When the reducer is called it will increment the initial state by 1, and the 
+            variable imported from Redux into FavItem.js, will be put in a useEffect() dependancy array, which will trigger any time an item is deleted and 
+            rerender the Fav.view.js component with the update information.
+
+(6) Directory: server - ExpressJS [Location: server/server.js]
+    (a) File: server.js  
+        (1) The server.js file is the backend of the application.
+        (2) The backend makes use of ExpressJS
+        (3) Contains the routes for the application 
+            (1) "app.post('/post',...)" - This route is respsonsilbe for taking the user input from the frontend, the search term ans search type and passing it to 
+                the backend, where it will be stored in variables 'globalSearchTerm' and 'globalSearchType', this variables are defined outside of the route 
+                as they will be used globally within the server.js file.
+            (2) "app.get('/itunes', ...)" - This route will take the 'globalSearchTerm' and 'globalSearchType' variables and place them in the iTunes url. The 
+                response is an array of data from the API which will be displayed on the Itunes.view.js page.
+
+

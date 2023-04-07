@@ -1,0 +1,12 @@
+#FAV_VIEW {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    @include flex();
+
+
+    .no-favs-yet{
+        color: $green;
+        font-size: 3em;
+    }
+}
